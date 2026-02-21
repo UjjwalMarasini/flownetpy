@@ -1,11 +1,8 @@
 # src/flownetpy/api.py
 
 from __future__ import annotations
-
 from typing import Optional
-
 import numpy as np
-
 from .types import Geometry, BoundaryConditions, CutoffConfig, SolverConfig, Result
 from . import core
 
@@ -20,32 +17,6 @@ def run_seepage(
     compute_velocity: bool = True,
     case_label: Optional[str] = None,
 ) -> Result:
-    """
-    Solve seepage/flownet problem for a dam-on-soil domain using finite differences.
-
-    Parameters
-    ----------
-    geom : Geometry
-        Geometry + domain + grid definition.
-    bc : BoundaryConditions
-        Upstream and downstream heads.
-    cutoffs : CutoffConfig, optional
-        Cutoff wall definitions. If None, no cutoffs are used.
-    solver : SolverConfig, optional
-        Solver controls and hydraulic conductivity. If None, defaults must be provided by user later.
-    x_control : float, optional
-        x-location (m) where discharge per unit width is computed by integrating qx over depth.
-        If None, a default location is chosen downstream of the toe.
-    compute_velocity : bool
-        If True, compute U and V arrays for plotting streamlines.
-    case_label : str, optional
-        Metadata label stored in Result.
-
-    Returns
-    -------
-    Result
-        Head field, discharge, convergence info, and optional velocity and barrier arrays.
-    """
     if cutoffs is None:
         cutoffs = CutoffConfig()
 

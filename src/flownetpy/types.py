@@ -8,8 +8,7 @@ import numpy as np
 @dataclass(frozen=True)
 class Geometry:
     """
-    Geometry + domain + grid definition for seepage/flownet problem.
-
+    Geometry + domain + grid definition.
     All units are meters (m).
     """
     dam_height: float
@@ -25,7 +24,7 @@ class Geometry:
     grid_y: float
 
     def __post_init__(self) -> None:
-        # Minimal sanity checks (keep light; deeper checks can go in core.py)
+        # Minimal sanity checks.
         if self.dam_height <= 0:
             raise ValueError("dam_height must be > 0.")
         if self.base_width <= 0:
@@ -53,7 +52,7 @@ class Geometry:
 
     def dam_polygon(self) -> Tuple[np.ndarray, np.ndarray]:
         """
-        Returns (x, y) polygon arrays for dam body (including embedment).
+        Returns (x, y) polygon arrays for dam body.
         Useful for plotting.
         """
         heel = self.heel_x
@@ -85,7 +84,7 @@ class BoundaryConditions:
     ds_head: float
 
     def __post_init__(self) -> None:
-        # Heads can be negative in some abstract problems, but for your dam case
+        # Heads can be negative in some abstract problems
         # it usually makes sense to be >= 0. Keep permissive:
         if self.us_head == self.ds_head:
             # Not wrong, but likely not intended (no driving gradient)
@@ -97,7 +96,6 @@ class BoundaryConditions:
 class CutoffConfig:
     """
     Cutoff walls. A cutoff is considered active if width > 0 AND depth > 0.
-
     All units are meters (m).
     """
     us_cutoff_width: float = 0.0
@@ -175,8 +173,7 @@ class SolverConfig:
 class Result:
     """
     Outputs from seepage solver.
-
-    Q: seepage discharge per unit width (m^2/s)
+    Q: seepage discharge per unit width (m^3/s/m)
     """
     x_nodes: np.ndarray
     y_nodes: np.ndarray

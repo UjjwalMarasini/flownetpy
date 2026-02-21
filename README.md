@@ -23,6 +23,27 @@ using a 2D finite-difference scheme with optional upstream and downstream cutoff
 
 ---
 
+# types.py
+
+## Overview
+
+The `types.py` module defines the core data structures used in **flownetpy**.
+
+It provides structured definitions for:
+
+- Geometry definitions
+- Boundary condition types
+- Solver configuration options
+- Grid properties
+
+This module does not perform numerical computations.  
+Instead, it defines the shape and structure of the data used by the solver.
+
+## Summary
+
+`types.py` defines **what objects exist in the system**.  
+Other modules define **how the computations are performed**.
+
 ## Installation (development mode)
 
 From the project root:

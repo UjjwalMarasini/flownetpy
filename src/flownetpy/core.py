@@ -1,34 +1,7 @@
-# core.py
-
-# core.py contains following functions
-
-# A) Grid + initial head
-# build_grid(geom) -> (x_nodes, y_nodes, h0)
-
-# B) Barrier
-# build_barrier_x(geom, cutoffs, x_nodes, y_nodes) -> barrier_x
-
-# C) Apply BC
-# apply_boundary_conditions(h, geom, bc, x_nodes) -> h
-
-# D) Solve head
-# solve_head(h0, geom, bc, barrier_x, solver, x_nodes, y_nodes) -> (h, converged, n_iter, max_change)
-
-# E) Velocity
-# compute_velocity(h, geom, solver, barrier_x) -> (U, V)
-
-# F) Discharge
-# compute_discharge(h, geom, solver, x_nodes, y_nodes, x_control) -> Q
-
-# src/flownetpy/core.py
-
 from __future__ import annotations
-
 from dataclasses import replace
 from typing import Tuple
-
 import numpy as np
-
 from .types import Geometry, BoundaryConditions, CutoffConfig, SolverConfig
 
 

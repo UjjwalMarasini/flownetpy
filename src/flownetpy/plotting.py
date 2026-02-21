@@ -25,37 +25,6 @@ def plot_flownet(
     stream_maxlength: float = 100.0,
     stream_minlength: float = 0.01,
 ):
-    """
-    Plot flownet: equipotential contours of head + streamlines from Darcy flux.
-
-    Parameters
-    ----------
-    result : Result
-        Output from run_seepage().
-    geom : Geometry
-        Geometry/domain/grid definition.
-    bc : BoundaryConditions
-        Upstream/downstream heads.
-    cutoffs : CutoffConfig, optional
-        Cutoff configuration. If None, assumes no cutoffs.
-    show : bool
-        If True, display the figure.
-    savepath : str, optional
-        If provided, save figure to this path.
-    dpi : int
-        DPI for saved image.
-    title : str, optional
-        Plot title override.
-    n_equipotential : int
-        Number of head contour levels.
-    n_flow_seeds : int
-        Number of streamline seed points.
-    seed_x_span : (float, float)
-        Seed x-range relative to heel (meters). Matches your original [-6, -1].
-    seed_y : float
-        Seed y position (meters), slightly below ground to start inside soil.
-    """
-
     if cutoffs is None:
         cutoffs = CutoffConfig()
 

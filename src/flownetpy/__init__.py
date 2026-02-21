@@ -1,7 +1,6 @@
 """
 flownetpy
 ---------
-
 Finite-difference flownet seepage solver for dam-foundation problems.
 """
 
