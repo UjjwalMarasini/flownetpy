@@ -122,17 +122,4 @@ For homogeneous hydraulic conductivity, this reduces to the Laplace equation:
 
 ---
 
-## Roadmap
 
-- Transient seepage solver
-- Spatially variable hydraulic conductivity
-- Grid refinement tools
-- Benchmark validation cases
-
----
-
-## Author
-
-Ujjwal Marasini  
-Department of Civil Engineering  
-New Mexico State University
