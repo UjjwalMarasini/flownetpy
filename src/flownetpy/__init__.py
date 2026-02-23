@@ -4,7 +4,7 @@ flownetpy
 Finite-difference flownet seepage solver for dam-foundation problems.
 """
 
-__version__ = "0.1.0"
+__version__ = "0.1.3"
 
 from .types import (
     Geometry,
