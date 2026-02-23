@@ -233,5 +233,7 @@ def compute_discharge(
 
     dh_dx = (h[:, i + 1] - h[:, i - 1]) / (2.0 * dx)
     qx = -k * dh_dx
-    Q = float(np.trapz(qx, y_nodes))
+    integrate = np.trapezoid if hasattr(np, "trapezoid") else np.trapz
+    Q = float(integrate(qx, y_nodes))
+    
     return Q

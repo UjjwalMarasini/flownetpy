@@ -1,17 +1,21 @@
 [build-system]
-requires = ["setuptools>=61"]
+requires = ["setuptools>=68", "wheel"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "flownetpy"
-version = "0.1.0"
-description = "Finite difference flownet seepage solver"
-authors = [{name = "Ujjwal Marasini, Ashmita Guragain"}]
+name = "damflownet"
+version = "0.1.2"
+description = "Finite-difference flownet seepage solver for dam–foundation problems."
 readme = "README.md"
 requires-python = ">=3.9"
+license = { file = "LICENSE" }
+authors = [
+  { name = "Ujjwal Marasini" },
+  { name = "Ashmita Guragain" }
+]
 dependencies = [
-    "numpy",
-    "matplotlib",
+  "numpy>=1.20",
+  "matplotlib>=3.5",
 ]
 
 [tool.setuptools.packages.find]

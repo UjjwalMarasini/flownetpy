@@ -26,7 +26,7 @@ using a structured 2D finite-difference formulation with optional upstream and d
 Install from PyPI:
 
 ```bash
-pip install flownetpy
+pip install damflownet
 ```
 
 Development install (from project root):
